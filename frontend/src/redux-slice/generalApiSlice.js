@@ -20,14 +20,6 @@ export const generalApiSlice = apiSlice.injectEndpoints({
             }),
             invalidatesTags: ['CommonData'],
         }),
-        uploadQuestionPaperKey: builder.mutation({
-            query: (data) => ({
-                url: '/api/common/upload_question_paper_key',
-                method: 'POST',
-                body: data,
-            }),
-            invalidatesTags: ['CommonData'],
-        }),
         getFacultyData: builder.mutation({
             query: (data) => ({
                 url: '/api/common/fetch_master_data',
@@ -124,7 +116,6 @@ export const generalApiSlice = apiSlice.injectEndpoints({
 export const { 
     useGetServerTimeQuery, 
     useGetTableDataWhereMutation, 
-    useUploadQuestionPaperKeyMutation, 
     useGetFacultyDataMutation, 
     useAddDepartmentMutation, 
     useUpdateDepartmentMutation, 

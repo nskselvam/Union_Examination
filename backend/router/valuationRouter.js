@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { ValuationpendingUpdate,valuation_timing, valuation_Remarks_Malpractice, valuation_marks_preview_data_examiner, valuation_marks_preview_date, subcode_Fetech, valuation_Barcode_Fetch, valuation_Image_Fetch, valuation_Data_Update, examminer_valuation_data_get, valuation_Finalize, examiner_review_data_get, examiner_review_value_data_get, chief_valuation_Barcode_Fetch, valuation_chief_Barcode_Data, evaluator_checkdates, Chief_Review_Data_Update, rejectedByChief,ValuationCheifRemarksGet,ExaminerTotalMarksGet } = require('../controller/valuation_Examiner');
+const { ValuationpendingUpdate,valuation_timing, valuation_Remarks_Malpractice, valuation_marks_preview_data_examiner, valuation_marks_preview_date, subcode_Fetech, valuation_Barcode_Fetch, valuation_Image_Fetch, valuation_Data_Update, examminer_valuation_data_get, valuation_Finalize, examiner_review_data_get, examiner_review_value_data_get, chief_valuation_Barcode_Fetch, valuation_chief_Barcode_Data, evaluator_checkdates, Chief_Review_Data_Update, rejectedByChief,ExaminerTotalMarksGet } = require('../controller/valuation_Examiner');
 const { modalprotect ,modalmodalprotect} = require('../middleware/authMiddleware');
 
 // Define your valuation routes here
@@ -18,7 +18,6 @@ router.post('/valuation_remarks_malpractice', modalprotect, valuation_Remarks_Ma
 router.get('/valuation_timing', modalprotect, valuation_timing);
 router.post('/Valuation_Chief_Review_Data_Update', modalprotect, Chief_Review_Data_Update);
 router.post('/rejected_by_chief', modalprotect, rejectedByChief);
-router.get('/valuation_chief_remarks_get', modalprotect, ValuationCheifRemarksGet);
 router.post('/pending-update', modalprotect, ValuationpendingUpdate);
 router.get('/examiner-total-marks', modalprotect, ExaminerTotalMarksGet);
 

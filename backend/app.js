@@ -10,30 +10,15 @@ const globalErrorHandler = require("./middleware/errorController");
 const authRouter = require('./router/authRouter');
 const commonRouter = require('./router/commonRouter');
 const navbarRouter = require('./router/NavbarRouter');
-const IpRouter = require('./router/ipConfigRouter');
-const excelText = require('./router/excelTextRouter');
 const examinationValuation = require('./router/valuationRouter');
 const dashboardRouter = require('./router/dashboardRouter');
-const SubjectMasterRouter = require('./router/SubjectMasterRouter');
 const pdfRouter = require('./router/pdfRouter');
 const adminOperationRouter = require('./router/adminOperationRouter');
 require("dotenv").config({ path: `${process.cwd()}/.env`});
 const sequelize = require('./config/database');
 const getCommonDataRouter = require('./router/getDataRouter');
 const updataMasterDataRouter = require('./router/upDataMasterDataRouter');
-const examinerRouter = require('./router/examinerRouter');
-const AlterationOperationRouter = require('./router/AlterationOperationRouter');
-const valuationstatusRouter = require('./router/valuationstatusRouter');
-const monthYearMasterRouter = require('./router/monthYearMasterRouter');
-const paperReviewRouter = require('./router/paperReviewRouter');
-const valuationCancelRouter = require('./router/valuationCancelRouter');
-const dataExportRouter = require('./router/dataExportRouter');
-const valuationMoveRouter = require('./router/valuationMoveRouter');
-const scanningRouter = require('./router/scanningRouter');
-const dataBackupRouter = require('./router/dataBackupRouter');
-const McqOperationRouter = require('./router/McqOperationRouter');
 const adminSqlRouter = require('./router/adminSqlRouter');
-const dataAllowanceRouter = require('./router/dataAllowanceRouter');
 const redisRouter = require('./router/redisRouter');
 
 
@@ -149,28 +134,13 @@ app.get('/api/common/pdf/evaluated-marks', asyncHandler(async (req, res) => {
 app.use('/api/auth', authRouter);
 app.use('/api/navbar', navbarRouter)
 app.use('/api/common', commonRouter);
-app.use('/api/ip-config', IpRouter);
-app.use('/api/excel-text', excelText);
 app.use('/api/v1/valuation', examinationValuation);
 app.use('/api/dashboard', dashboardRouter);
 app.use('/api/v1/pdf', pdfRouter);
 app.use('/api/admin', adminOperationRouter);
 app.use('/api/get_data', getCommonDataRouter);
 app.use('/api/updata_master_data', updataMasterDataRouter);
-app.use('/api/subject', SubjectMasterRouter);
-app.use('/api/examiner', examinerRouter);
-app.use('/api/alteration', AlterationOperationRouter);
-app.use('/api/valuationstatus', valuationstatusRouter);
-app.use('/api/month-year', monthYearMasterRouter);
-app.use('/api/paper-review', paperReviewRouter);
-app.use('/api/valuation-cancel', valuationCancelRouter);
-app.use('/api/data-export', dataExportRouter);
-app.use('/api/valuation-move', valuationMoveRouter);
-app.use('/api/scanning', scanningRouter);
-app.use('/api/data-backup', dataBackupRouter);
-app.use('/api/mcq-operation', McqOperationRouter);
 app.use('/api/admin-sql', adminSqlRouter);
-app.use('/api/data-allowance', dataAllowanceRouter);
 app.use('/api/redis', redisRouter);
 
 app.use(asyncHandler(async (req, res, next) => {

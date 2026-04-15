@@ -100,16 +100,7 @@ export const valuationStatusApiSlice = apiSlice.injectEndpoints({
       }),
       invalidatesTags: ['ValuationPendingDetails']
     }),
-    getChiefRemarks: builder.query({
-      query: (params) => ({
-        url: `api/valuationstatus/chief-remarks`,
-        method: "GET",
-        params: params
-      }),
-      providesTags: ['ChiefRemarks']
-    }),
-
   }),
 });
 
-export const { useGetCampDetailsQuery, useGetSubcodeDetailsQuery, useGetExaminerSubcodeDetailsQuery, useGetRemarksMalpracticeDetailsQuery, useGetValuationPendingDetailsQuery, useSubmitPendingAssignmentMutation, useGetChiefSubcodeDetailsQuery, useSubmitExaminerStatusChangeMutation, useGetSubcodeEvaluationStatusQuery, useChiefEvaluationUpdateflgMutation, usePendingPaperClearMutation, usePendingReleaseChiefMutation, useGetChiefRemarksQuery } = valuationStatusApiSlice;
+export const { useGetCampDetailsQuery, useGetSubcodeDetailsQuery, useGetExaminerSubcodeDetailsQuery, useGetRemarksMalpracticeDetailsQuery, useGetValuationPendingDetailsQuery, useSubmitPendingAssignmentMutation, useGetChiefSubcodeDetailsQuery, useSubmitExaminerStatusChangeMutation, useGetSubcodeEvaluationStatusQuery, useChiefEvaluationUpdateflgMutation, usePendingPaperClearMutation, usePendingReleaseChiefMutation } = valuationStatusApiSlice;

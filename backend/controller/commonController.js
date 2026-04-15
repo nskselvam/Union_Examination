@@ -872,7 +872,6 @@ module.exports = {
   generalMasterData,
   master_Valid_Sections_Cross_Check,
   table_data_where,
-  upload_Question_Paper_Key,
   fetch_Master_Data,
   getUserAttendanceLogs,
   getUserAttendanceSummary

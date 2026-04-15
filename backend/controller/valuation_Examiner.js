@@ -1842,42 +1842,6 @@ const rejectedByChief = asyncHandler(async (req, res) => {
 })
 
 
-const ValuationCheifRemarksGet = asyncHandler(async (req, res) => {
-  const { barcode, subcode, eva_id } = req.query;
-
-
-  console.log(req.query, "Request query for Valuation Chief Remarks Get");
-
-  if (!barcode || !subcode || !eva_id) {
-    res.status(400);
-    throw new AppError("All required fields must be provided", 400);
-  }
-
-  const Remarks_Get = await db.chief_remarks.findOne({
-    where: {
-      Barcode: barcode,
-      evaluator_subject: subcode,
-      view_status: "N",
-      evaluator_id: eva_id
-    }
-  });
-
-  console.log(Remarks_Get, "Chief remarks fetched for Valuation Chief Remarks Get");
-
-  if (!Remarks_Get) {
-    res.status(404).json({
-      message: "No chief remarks found for the given barcode and subcode",
-      data: null
-    });
-    return;
-  }
-
-  res.status(200).json({
-    message: "Chief remarks fetched successfully",
-    data: Remarks_Get
-  });
-});
-
 const ValuationpendingUpdate = asyncHandler(async (req, res) => {
 
   const { barcode, subcode, Eva_Id, Valuation_Type, Examiner_type, Dep_Name } = req.body;
@@ -1996,7 +1960,6 @@ module.exports = {
   valuation_timing,
   Chief_Review_Data_Update,
   rejectedByChief,
-  ValuationCheifRemarksGet,
   ValuationpendingUpdate,
   ExaminerTotalMarksGet
 };
