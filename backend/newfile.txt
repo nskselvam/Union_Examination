@@ -1,0 +1,174 @@
+npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+
+npx sequelize-cli model:generate --name user_role_master --attributes user_role_code:integer,user_role:string
+
+npx sequelize-cli model:generate --name campus_master --attributes campus_Code:integer,campus_Name:string
+
+
+npx sequelize-cli model:generate --name valid_ip --attributes Ip_Address:string,block_name:string,vflg:string,campus:string,floor:string
+
+
+npx sequelize-cli db:migrate
+
+
+INSERT INTO bank_details_ifsc ("BANK", "IFSC", "BRANCH", "ADDRESS", "CITY1", "CITY2, STATE, STD_CODE, PHONE)
+SELECT BANK, IFSC, BRANCH, ADDRESS, CITY1, CITY2, STATE, STD_CODE, PHONE
+FROM bank_details;
+
+INSERT INTO "datta_allowances" (
+    "depcode",
+    "particulars",
+    "remuneration_data",
+    "incidental",
+    "accomodation_cost",
+    "billprovide",
+    "dearnessallowance",
+    "travelallowance",
+    "particulars_name",
+    "remuneration_name",
+    "createdAt",
+    "updatedAt"
+)
+SELECT 
+    "depcode",
+    "particulars",
+    "remuneration_data",
+    "incidental",
+    "accomodation_cost",
+    "billprovide",
+    "dearnessallowance",
+    "travelallowance",
+    "particulars_name",
+    "remuneration_name",
+    CURRENT_TIMESTAMP,
+    CURRENT_TIMESTAMP
+FROM "td_allowances";
+
+
+data: {
+    fromDate: '2026-01-30T18:30:00.000Z',
+    toDate: '2026-02-05T09:16:41.988Z',
+    campId: 'FSH12',
+    campOfficerId: '20316',
+    eligibilityChecked: true,
+    daAmount: 450,
+    taAmount: 0,
+    taType: '1',
+    daType: '1',
+    noDays: 6,
+    additionalAmount: 2000,
+    daTypeText: 'Local - one time, if accommodation is provided',
+    bankDetails: {
+      EMPLOYEE_NAME: 'SAMPLE',
+      BANK_ACCOUNT_NUMBER: '111111111111111121',
+      BANK_NAME: 'HDFC BANK',
+      IFSC: 'HDFC0001947',
+      BRANCH: 'AYYAPPANTHANGAL',
+      NATUREOFBANK: 'savings',
+      Type_Edit: true
+    },
+    examinerType: '2',
+    totalAmount: 2125,
+    valuationRecords: [],
+    evaluatorName: 'Sample',
+    evaluatorId: '600310'
+  },
+  subjectCountData: {
+    message: 'Functionality to be implemented',
+    importfinal: [ [Object], [Object] ],
+    Total_Amount: 500
+  },
+  daAmount: 900,
+  taAmount: 2000,
+  working_days: '2'
+}
+subjectCountData: {
+  message: 'Functionality to be implemented',
+  importfinal: [
+    {
+      subcode: 'TE24101T',
+      total_scripts: '2',
+      checked_scripts: '2',
+      overall_working_days: '2',
+      valuation_type: '1',
+      sub_name: 'EDUCATIONAL PSYCHOLOGY',
+      rate_per_script: '25',
+      min_amount: '250',
+      amount_calculated: '250'
+    },
+    {
+      subcode: 'TE24106T',
+      total_scripts: '1',
+      checked_scripts: '1',
+      overall_working_days: '2',
+      valuation_type: '1',
+      sub_name: 'TEACHING OF ENGLISH -  I',
+      rate_per_script: '25',
+      min_amount: '250',
+      amount_calculated: '250'
+    }
+  ],
+  Total_Amount: 500
+}
+importfinal: [
+  {
+    subcode: 'TE24101T',
+    total_scripts: '2',
+    checked_scripts: '2',
+    overall_working_days: '2',
+    valuation_type: '1',
+    sub_name: 'EDUCATIONAL PSYCHOLOGY',
+    rate_per_script: '25',
+    min_amount: '250',
+    amount_calculated: '250'
+  },
+  {
+    subcode: 'TE24106T',
+    total_scripts: '1',
+    checked_scripts: '1',
+    overall_working_days: '2',
+    valuation_type: '1',
+    sub_name: 'TEACHING OF ENGLISH -  I',
+    rate_per_script: '25',
+    min_amount: '250',
+    amount_calculated: '250'
+  }
+]
+Total_Amount: 500
+DA Amount: 450
+
+
+
+evaluator_id	varchar(50)	latin1	latin1_swedish_ci	YES	NULL			
+evaluator_name	varchar(50)	latin1	latin1_swedish_ci	YES	NULL		
+Remarks_Type  varchar(5)	latin1	latin1_swedish_ci	YES	NULL
+Remarks_value	varchar(5)	latin1	latin1_swedish_ci	YES	NULL			
+msg	varchar(250)	latin1	latin1_swedish_ci	YES	NULL			
+evaluator_subject	varchar(50)	latin1	latin1_swedish_ci	YES	NULL			
+Dummy_Number	varchar(25)	latin1	latin1_swedish_ci	YES	NULL			
+RemarksSubject	varchar(255)	latin1	latin1_swedish_ci	YES	NULL			
+Campofficerid	varchar(50)	latin1	latin1_swedish_ci	NO	NULL			
+Campid	varchar(25)	latin1	latin1_swedish_ci	NO	NULL		
+
+
+{"Max mark for question 1: 4 does NOT match expected MARK_MAX: 2","Max mark for question 19a: 10 does NOT match expected MARK_MAX: 15","Max mark for question 19b: 10 does NOT match expected MARK_MAX: 15","Max mark for question 20a: 10 does NOT match expected MARK_MAX: 15","Max mark for question 20b: 10 does NOT match expected MARK_MAX: 15","No valid question(s) found for Subcode TE24101T, Section B, Question Number 11","No valid question(s) found for Subcode TE24101T, Section B, Question Number 12","No valid question(s) found for Subcode TE24101T, Section B, Question Number 13","No valid question(s) found for Subcode TE24101T, Section B, Question Number 14","No valid question(s) found for Subcode TE24101T, Section B, Question Number 15","No valid question(s) found for Subcode TE24101T, Section B, Question Number 16","No valid question(s) found for Subcode TE24101T, Section B, Question Number 17","No valid question(s) found for Subcode TE24101T, Section B, Question Number 18"}
+
+{"No valid question(s) found for Subcode TE24112T, Section A, Question Number 1","No valid question(s) found for Subcode TE24112T, Section A, Question Number 2","No valid question(s) found for Subcode TE24112T, Section A, Question Number 3","No valid question(s) found for Subcode TE24112T, Section A, Question Number 4","No valid question(s) found for Subcode TE24112T, Section A, Question Number 5","No valid question(s) found for Subcode TE24112T, Section A, Question Number 6","No valid question(s) found for Subcode TE24112T, Section A, Question Number 7","No valid question(s) found for Subcode TE24112T, Section A, Question Number 8","No valid question(s) found for Subcode TE24112T, Section A, Question Number 9","No valid question(s) found for Subcode TE24112T, Section A, Question Number 10","No valid question(s) found for Subcode TE24112T, Section B, Question Number 11","No valid question(s) found for Subcode TE24112T, Section B, Question Number 12","No valid question(s) found for Subcode TE24112T, Section B, Question Number 13","No valid question(s) found for Subcode TE24112T, Section B, Question Number 14","No valid question(s) found for Subcode TE24112T, Section B, Question Number 15","No valid question(s) found for Subcode TE24112T, Section B, Question Number 16","No valid question(s) found for Subcode TE24112T, Section B, Question Number 17","No valid question(s) found for Subcode TE24112T, Section B, Question Number 18","No valid question(s) found for Subcode TE24112T, Section C, Question Number 19","No valid question(s) found for Subcode TE24112T, Section C, Question Number 19","No valid question(s) found for Subcode TE24112T, Section C, Question Number 20"}
+
+it status
+It looks like you're in the middle of an interactive rebase. Let me continue the rebase and then push:
+
+git rebase --continue
+git push origin main
+
+{
+  Eva_Id: '600309',
+  FACULTY_NAME: 'SELVAKUMAR N',
+  Email_Id: 'nskselvam@gmail.com',
+  Mobile_Number: '9444035513',
+  Role: '0',
+  Dep_Name: '01',
+  Eva_Mon_Month: 'Nov',
+  Eva_Mon_Year: '2026'
+}

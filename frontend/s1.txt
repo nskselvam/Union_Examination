@@ -1,0 +1,45 @@
+
+                                                Text File
+                                                Faculty Reg
+                                                Subject Master
+                                                Sections
+                                                Valid Questions
+                                                Paper Review
+                                                Revaluation
+                                                MasterData
+                                                Dummy Upload
+                                                Staff Wise Paper Assign
+                                                Import Ip Table
+                                                Sms Send
+                                                Staff Master
+
+
+
+    {
+      "Subcode": "TE24101T",
+      "SUBNAME": "EDUCATIONAL PSYCHOLOGY",
+      "qb_flg": "Y",
+      "ans_flg": "Y",
+      "mismatch_flg": "Y",
+      "Type_of_Exam": "R",
+      "totalCount": 17,
+      "checkedCount": 1,
+      "pendingCount": 16,
+      "examiners": [
+        {
+          "Evaluator_Id": "123456",
+          "FACULTY_NAME": "SELVA KUMAR N",
+          "Examiner_Valuation_Status": "N"
+        },
+        {
+          "Evaluator_Id": "600309",
+          "FACULTY_NAME": "Dr. N. Prema",
+          "Examiner_Valuation_Status": "N"
+        },
+        {
+          "Evaluator_Id": "rokesh",
+          "FACULTY_NAME": "rokesh",
+          "Examiner_Valuation_Status": "N"
+        }
+      ]
+    },

@@ -1,0 +1,13 @@
+
+{
+  "examinerRoles": [
+    { "id": "0", "name": "Admin" },
+    { "id": "1", "name": "Chief Examiner" },
+    { "id": "2", "name": "Examiner" },
+    { "id": "3", "name": "Review" },
+    { "id": "4", "name": "Camp Officer" },
+    { "id": "5", "name": "Camp Officer Assistant" },
+    { "id": "6", "name": "Section Staff" },
+    { "id": "7", "name": "Chief Evaluation Examiner" }
+  ] 
+}

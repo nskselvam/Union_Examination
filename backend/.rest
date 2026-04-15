@@ -1,0 +1,827 @@
+POST http://localhost:8000/api/auth/login/
+content-type: application/json
+
+{
+    "email":"600321",
+    "password":"Priya@2308"
+}
+
+###
+POST http://localhost:8000/api/auth/login/
+content-type: application/json
+
+{
+    "email":"600309",
+    "password":"Priya@2308"
+}
+
+###
+POST http://localhost:8000/api/auth/login/
+content-type: application/json
+
+{
+    "email":"500001",
+    "password":"Svnsvn@123"
+}
+
+
+###
+POST http://localhost:8000/api/auth/logout/
+content-type: application/json
+
+###
+POST http://localhost:8000/api/auth/email-sent/
+content-type: application/json
+
+{
+    "email":"nskselvam"
+}
+###
+
+POST http://localhost:8000/api/auth/password_reset/
+content-type: application/json
+
+{
+    "email":"nskselvam",
+    "password":"3WDK3UTN",
+    "confirmPassword":"3WDK3UTN"
+}
+###
+
+POST http://localhost:8000/api/auth/register/
+content-type: application/json
+
+{
+    "Dep_Name":"01",
+    "FACULTY_NAME":"NSK Selvam",
+    "Eva_Id":"nskselvam",
+    "Role":"1",
+    "subcode":"CS101"
+}
+
+###
+//Common Master_Data
+
+###
+POST http://localhost:8000/api/common/master-data-register/
+content-type: application/json
+
+{
+"D_Code_01":"05",
+"Degree_Name_02":"FSH",
+"Flg_03":"Y",
+"Time_Flg_04":"N",
+"Paper_Time_05":"12.45"
+}
+
+###
+PUT http://localhost:8000/api/common/master-data-register/6
+content-type: application/json
+
+{
+"D_Code_01":"01",
+"Degree_Name_02":"E & T",
+"Flg_03":"Y",
+"Time_Flg_04":"N",
+"Paper_Time_05":"12.45"
+}
+
+###
+GET http://localhost:8000/api/common/master-data/
+content-type: application/json
+
+{
+"tableName":"master_data",
+"order1":"D_Code"
+
+}
+###
+
+GET http://localhost:8000/api/common/master-data/6
+content-type: application/json
+###
+DELETE  http://localhost:8000/api/common/master-data/7
+content-type: application/json
+###
+
+
+POST http://localhost:8000/api/common/master-role-register/
+content-type: application/json
+
+{
+"user_role_code":"3",
+"user_role":"Admin"
+}
+###
+GET http://localhost:8000/api/common/master-data/
+content-type: application/json
+
+{
+    
+"tableName":"user_role_masters",
+"order1":"user_role_code"
+
+}
+
+###
+
+POST http://localhost:8000/api/common/valid-ip-register/
+content-type: application/json
+
+{
+"ip_from":"27.61.58.22",
+"ip_to":"27.61.58.22",
+"block_name":"Block A",
+"vflg":"Y",
+"campus":"Main Campus",
+"floor":"1"
+}
+###
+GET http://localhost:8000/api/common/general-master-data/
+content-type: application/json
+
+{
+"tableName":"user_role_masters",
+"order1":"user_role_code"
+
+}
+###
+GET https://osms.svnimaging.com/api/common/general-master-data/
+content-type: application/json
+
+{
+"tableName":"user_role_masters",
+"order1":"user_role_code"
+
+}
+
+
+###
+GET http://localhost:8000/api/v1/valuation/subcode_section
+content-type: application/json
+
+{
+"subcode":"TE24112T",
+"valuation_type":"1"
+}
+
+
+###
+GET http://localhost:8000/api/v1/valuation/valuation_barcode
+content-type: application/json
+
+{
+    "subcode":"TE24103T",
+    "valuation_type":"1",
+    "Examiner_type":"1",
+    "Eva_Id":"600321",
+    "Eva_Mon_Year":"Nov_2025"
+}
+
+###
+GET http://localhost:8000/api/v1/valuation/valuation_images
+content-type: application/json
+
+{
+    "batchname":"82170024",
+    "subcode":"TE24113T",
+    "Dep_Name":"01",
+    "Img_Number":"3",
+    "Eva_Mon_Year":"Nov_2025"
+}
+
+####
+
+POST http://localhost:8000/api/dashboard/subcode_fetch
+content-type: application/json
+
+{
+  "department": "01,01,01,01,01,01,01,01,01,01,01",
+  "role": "1,7,2",
+  "subcode": "TE24101T,TE24105T,TE24106T,TE24108T,TE24109T,TE24113T",
+  "Eva_Subject": "1,1,1,1,1,1",
+  "Max_Papers_subject": "75",
+  "Sub_Max_Papers": "0,0,0,0,0,0,0",
+  "chief_examiner": "600321,600321,600321,600321,600321",
+  "Chief_subcode": "TE24102T,TE24103T,TE24104T,TE24107T,TE24112T",
+  "Chief_Eva_Subjects": "1,1,1,1,1",
+  "Camp_id": "FSH12,FSH12,FSH12,FSH12,FSH12,FSH12",
+  "camp_offcer_id_examiner": "20316,20316,20316,20316,20316,20316",
+  "Camp_id_chief": "FSH12,FSH12,FSH12,FSH12,FSH12",
+  "camp_offcer_id_chief": "20316,20316,20316,20316,20316",
+  "Examiner_Valuation_Status": "N,N,N,N,N,N",
+  "Chief_Valuation_Status": "N,N,N,N,N"
+}
+
+###
+POST http://localhost:8000/api/v1/valuation/valuation_data_update
+content-type: application/json
+
+{
+  "barcode":"82170024",
+  "subcode":"TE24113T",
+  "Eva_Id":"600309",
+  "sec_id":"5",
+  "Qbs_Page_No":"3",
+  "Dep_Name":"01",
+  "page_no" : "4",
+  "Marks_Get":"8",
+  "section":"A",
+  "sub_section":"a",
+  "add_sub_section":"",
+  "max_marks":"8",
+  "qbno":"3",
+  "Eva_Mon_Year":"Nov_2025",
+  "valuation_type":"1",
+  "Examiner_type":"2",
+  "BL_Point":"1",
+  "CO_Point":"1",
+  "PO_Point":"1"
+}
+ 
+###
+POST http://localhost:8000/api/v1/valuation/valuation_finalize
+content-type: application/json
+
+{
+  "barcode":"82203864",
+  "subcode":"TE24101T",
+  "Eva_Id":"600321",
+  "Dep_Name":"01",
+  "Eva_Mon_Year":"Nov_2025",
+  "valuation_type":"1",
+  "Examiner_type":"1",
+  "Final_Marks_Front": 43,
+  "Regular_Questions": 16,
+  "AB_Questions": 2,
+  "Total_Rounded_Marks_Front": 43
+}
+
+###
+POST http://localhost:8000/api/v1/pdf/valuation-report
+content-type: application/json
+
+{
+    "barcode":"82170024",
+    "subcode":"TE24113T",
+    "Dep_Name":"01",
+    "Eva_Id":"600309",
+    "Eva_Mon_Year":"Nov_2025",
+    "valuation_type":"1",
+    "Examiner_type":"1"
+}   
+
+###
+
+POST http://localhost:8000/api/dashboard/dashboard-data-subcode
+content-type: application/json
+
+{
+  "department": "01",
+  "role": "1",
+  "subcode": "TE24101T,TE24105T,TE24106T,TE24108T,TE24109T,TE24113T",
+  "Eva_Subject": "1,1,1,1,1,1",
+  "Eva_Id":"600309"
+}
+
+
+###
+
+GET http://localhost:8000/api/v1/valuation/examiner_review_data
+
+content-type: application/json
+
+{
+  "subcode":"TE24101T",
+  "Eva_Id":"600309",
+  "Dep_Name":"01",
+  "Eva_Mon_Year":"Nov_2025",
+  "valuation_type":"1",
+  "Examiner_type":"1"
+}
+
+###
+
+GET http://localhost:8000/api/v1/valuation/examiner_review_value_data
+content-type: application/json
+
+{
+  "barcode":"82189124",
+  "Eva_Id":"600309",
+  "subcode":"TE24101T",
+  "Dep_Name":"01",
+  "Eva_Mon_Year":"Nov_2025",
+  "valuation_type":"1",
+  "Examiner_type":"1"
+}
+
+###
+GET http://localhost:8000/api/v1/valuation/valuation_chief
+content-type: application/json
+
+{
+  "subcode":"TE24103T",
+  "valuation_type":"2",
+  "Examiner_type":"2",
+  "Eva_Id":"600321",
+  "Eva_Mon_Year":"Nov_2025"
+}
+###
+GET http://localhost:8000/api/v1/valuation/valuation_chief_barcode
+content-type: application/json
+
+{
+    "subcode":"TE24102T",
+    "valuation_type":"1",
+    "Examiner_type":"1",
+    "Eva_Id":"600321",
+    "barcode":"82200514",
+    "Examiner_Id":"600309"
+}
+
+###
+
+GET http://localhost:8000/api/dashboard/dashboard-data-subcode-chief
+content-type: application/json
+
+{
+  "department": "01",
+  "role": "7",
+  "Chief_subcode": "TE24102T,TE24103T,TE24104T,TE24107T,TE24112T",
+  "chief_examiner": "600321,600321,600321,600321,600321",
+  "Chief_Eva_Subjects": "1,1,1,1,1",
+  "Eva_Id": "600309"
+}
+
+###
+GET http://localhost:8000/api/v1/valuation/valuation_marks_preview_date
+content-type: application/json
+
+{
+
+    "Eva_Id":"600321"
+
+}
+
+###
+GET http://localhost:8000/api/v1/valuation/valuation_marks_preview_data_examiner
+content-type: application/json
+
+{
+
+"valuator_Id": "600309",
+"Valuation_Type": 1,
+"check_date": "21-01-2026",
+"Dept_Code": "01"
+}
+
+###
+
+POST http://localhost:8000/api/v1/pdf/valuation-report
+content-type: application/json
+
+{
+    "barcode":"82170024",
+    "subcode":"TE24113T",
+    "Dep_Name":"01",
+    "Eva_Id":"600309",
+    "Eva_Mon_Year":"Nov_2025",
+    "valuation_type":"1",
+    "Examiner_type":"1"
+}   
+
+###
+GET http://localhost:8000/api/dashboard/user/bank-details
+content-type: application/json
+
+{
+  "Ifsc_code": "CUB0408690"
+}
+
+###
+GET http://localhost:8000/api/dashboard/user/bank-details-staff
+content-type: application/json
+
+{
+  "Eva_id": "600309"
+}
+
+###
+POST http://localhost:8000/api/dashboard/user/bank-details
+content-type: application/json
+
+{
+"Evaluator_Id": "600310",
+"Type_Edit": true,
+"accountHolderName": "SAMPLE",
+"accountNumber": "111111111111111121",
+"accountType": "savings",
+"bankName": "HDFC BANK",
+"branchName": "AYYAPPANTHANGAL",
+"confirmAccountNumber": "111111111111111111",
+"ifscCode": "HDFC0001947"
+}
+
+
+###
+GET http://localhost:8000/api/dashboard/user/evaluator-details-subjectcount
+content-type: application/json
+
+{
+  "Eva_Id": "600309",
+  "frmdate":"01-01-2026",
+  "todate":"28-02-2026",
+  "examiner_type":"2"
+}
+
+
+###
+GET  http://localhost:8000/api/get_data/common-data
+content-type: application/json
+
+GET http://localhost:8000/api/get_data/common-data
+content-type: application/json
+
+{
+  "tableId" : "import1"
+}
+###
+POST http://localhost:8000/api/dashboard/tada-allowance
+content-type: application/json
+
+{
+  
+  "depcode": "01"
+}
+
+
+###
+POST http://localhost:8000/api/dashboard/examiner-payment-challan
+content-type: application/json
+
+{
+  
+  "examiner_id": "600309",
+  "month_year": "Jan_2026"
+}
+
+###
+GET http://localhost:8000/api/dashboard/campus-details
+content-type: application/json
+
+{
+  
+}
+
+
+
+###
+PUT http://localhost:8000/api/updata_master_data/subcode
+content-type: application/json
+
+{
+  "Subcode" : "TTE24102T",
+  "Eva_Month_Year" : "Nov_2025",
+  "Sub_Name" : "CONTEMPORARY INDIA AND EDUCATION",
+  "Rate_per_script" : "26",
+  
+  
+}
+
+
+###
+POST http://localhost:8000/api/v1/valuation/valuation_remarks_malpractice
+content-type: application/json
+
+{
+  "barcode":"82170024",
+  "subcode":"TE24113T",
+  "Eva_Id":"600309",
+  "Dep_Name":"01",
+  "Eva_Mon_Year":"Nov_2025",
+  "valuation_type":"1",
+  "Examiner_type":"1",
+  "reason": "Suspected Malpractice",
+  "description": "The answer sheet shows signs of tampering and irregularities in the markings."
+}
+
+###
+GET http://localhost:8000/api/v1/valuation/evaluator_checkdates
+content-type: application/json
+
+{
+  "evaluator_id": "600309"
+}
+
+###
+GET http://localhost:8000/api/v1/valuation/valuation_timing
+content-type: application/json
+
+{
+   "evaluator_id": "600309"
+}
+
+###
+GET http://localhost:8000/api/common/master-valid-sections-cross-check
+content-type: application/json
+
+{
+  
+}
+
+###
+POST http://localhost:8000/api/common/table_data_where
+content-type: application/json
+
+{
+  "tablename": "sub_master",
+  "whereCondition": {
+    "Subcode": "TE24101T"
+
+  },
+  "tblfields": ["Subcode", "SUBNAME"]
+}
+
+###
+POST http://localhost:8000/api/common/upload_question_paper_key
+content-type: application/json
+
+{
+
+"subcode": "TE24101T"
+
+}
+
+###
+GET http://localhost:8000/api/subject/
+content-type: application/json
+
+{
+  
+}
+###
+
+GET http://localhost:8000/api/v1/valuation/subcode_section
+content-type: application/json
+
+{ 
+
+}
+
+###
+POST http://localhost:8000/api/subject/question_paper
+Content-Type: application/json
+
+{
+  "subcode": "TE24101T",
+  "Dep_Name":"01",
+  "Eva_Mon_Year":"Nov_2025"
+}
+###
+POST http://localhost:8000/api/subject/question_paper_answer_key
+Content-Type: application/json
+
+{
+  "subcode": "TE24101T",
+  "Dep_Name":"01",
+  "Eva_Mon_Year":"Nov_2025",
+  "uploadType":"answer_key"
+}
+
+###
+GET http://localhost:8000/api/examiner
+Content-Type: application/json
+
+{
+  "Dep_Name":"01",
+  "Eva_Mon_Year":"Nov_2025"
+}
+
+
+### Examiner Password Reset
+POST http://localhost:8000/api/examiner
+Content-Type: application/json
+
+{
+  "id": "6"
+}
+
+### Examiner Password Reset
+GET http://localhost:8000/api/examiner/password-details
+Content-Type: application/json
+
+{
+  
+}
+
+### Examiner Password Reset
+POST http://localhost:8000/api/examiner/password-details
+Content-Type: application/json
+
+{
+
+  "Dep_Name":"01",
+  "Eva_Mon_Year":"Nov_2025"
+
+}
+
+### Examiner Password Reset
+GET http://localhost:8000/api/examiner/user-details
+Content-Type: application/json
+
+{
+  
+  "Eva_Id":"600309"
+
+}
+
+### Degree Name 
+
+GET http://localhost:8000/api/common/general-master-data
+Content-Type: application/json
+
+{
+  
+}
+
+### User Role Master
+GET http://localhost:8000/api/valuationstatus/camp-details
+Content-Type: application/json
+
+{
+  
+}
+
+###
+GET http://localhost:8000/api/valuationstatus/subcode-details
+Content-Type: application/json
+
+{
+  
+  "Valuation_Type": "1"
+
+}
+
+###
+GET http://localhost:8000/api/valuationstatus/examiner-subject-details
+Content-Type: application/json
+
+{
+  
+  "Valuation_Type": "1"
+
+}
+
+###
+GET http://localhost:8000/api/valuationstatus/chief-subject-details
+Content-Type: application/json
+
+{
+  
+"Valuation_Type": "1"
+
+}
+
+### Get Examiner Remarks
+GET http://localhost:8000/api/valuationstatus/examiner-remarks
+Content-Type: application/json
+
+ {
+ 
+
+
+ }
+
+###
+
+
+GET http://localhost:8000/api/valuationstatus/pending-valuation-details
+Content-Type: application/json
+
+ {
+
+  "Valuation_Type": "1"
+ 
+  }
+ 
+
+### Examiner Details
+POST  http://localhost:8000/api/common/fetch_master_data
+Content-Type: application/json
+
+ {
+
+  "subcode": "TE24102T",
+  "Eva_Id": "600321"
+ 
+  }
+
+###
+
+
+  PUT http://localhost:8000/api/valuationstatus/update-examiner-status
+  Content-Type: application/json
+
+  {
+    "Eva_Id": "600321",
+    "subcode": "TE24102T",
+    "Valuation_Type": "1",
+    "Examiner_Valuation_Status": "Y"
+  }
+
+###
+GET http://localhost:8000/api/valuationstatus/subcode_evaluation_status_examiner
+Content-Type: application/json
+
+{
+  "Valuation_Type": "1",
+  "Dep_Name": "03"
+}
+
+
+### Get Subcode Evaluation Status for Chief Examiner
+GET http://localhost:8000/api/examiner/examiner_check
+Content-Type: application/json
+
+{
+
+}
+
+### Get Admin Dashboard Chart Data
+POST http://localhost:8000/api/dashboard/admindashboard-chart-data
+Content-Type: application/json
+
+{
+  "Dep_Name": "01"
+
+}
+
+#### Get Examiner Dashboard Chart Data
+GET http://localhost:8000/api/paper-review
+Content-Type: application/json
+
+{
+    "Dep_Name": "05"
+}
+
+### Get Paper Review Download Link
+POST http://localhost:8000/api/paper-review/download  
+Content-Type: application/json
+
+{
+    "Dep_Name": "05",
+    "Subcode": "TE24101T",
+    "Eva_Mon_Year": "Nov_2025"
+}
+
+#### Get Examiner Dashboard Chart Data
+GET http://localhost:8000/api/paper-review/paper-review-zero
+Content-Type: application/json
+
+{
+    "Dep_Name": "05",
+    "Valuation_Type": "1"
+}
+
+
+### Get Examiner Dashboard Chart Data
+POST http://localhost:8000/api/v1/valuation/pending-update
+Content-Type: application/json
+
+{
+  "Eva_Id": "600309",
+  "Valuation_Type": "1",
+  "barcode": "82170024",
+  "subcode": "TE24113T",
+  "Dep_Name": "01",
+  "Examiner_type": "2"
+}
+
+### Get Examiner Dashboard Chart Data
+GET http://localhost:8000/api/dashboard/examiner-payment-details
+Content-Type: application/json
+
+{
+  "Eva_Id": "600309",
+  "Valuation_Type": "2"
+}
+
+### Get Examiner Dashboard Chart Data
+POST http://localhost:8000/api/admin/get_all_user_roll_data
+
+Content-Type: application/json
+
+{
+  "Eva_Id": "600309",
+  "Valuation_Type": "2",
+  "payment_status": "Paid"
+} 
+###
+GET http://localhost:8000/api/valuationstatus/chief-remarks
+
+Content-Type: application/json
+
+{
+  "Eva_Id": "600309",
+  "Valuation_Type": "2"
+}
